@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; SWAP 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SWAP 1.0.1 documentation" href="index.html"/>
+        <link rel="next" title="UI Usage" href="usage.html"/>
+        <link rel="prev" title="Welcome to SWAP’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SWAP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-installation">Automatic Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-installation">Manual Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-swap">Configuring SWAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#caesar-integration">Caesar Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parsing-classifications">Parsing Classifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging">Logging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">UI Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#interacting-with-swap">Interacting with SWAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#detailed-usage">Detailed Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SWAP</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automatic-installation">
+<h3>Automatic Installation<a class="headerlink" href="#automatic-installation" title="Permalink to this headline">¶</a></h3>
+<p>Clone this repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">miclaraia</span><span class="o">/</span><span class="n">swap</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Run the builtin setup script:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">swap</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>This script will create a virtual environment in the cloned git repository
+and install swap inside. It will also copy the default swap config file
+to the local location in <cite>swap/conf/swap.conf</cite>. SWAP will look for this config
+file in the following locations, and use the first one it finds:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>A location specified in the <code class="code docutils literal"><span class="pre">SWAP_CONFIG</span></code> environment variable</li>
+<li><code class="code docutils literal"><span class="pre">~/.swaprc</span></code></li>
+<li><code class="code docutils literal"><span class="pre">/etc/swap/swap.conf</span></code></li>
+<li><code class="code docutils literal"><span class="pre">swap/conf/swap.conf</span></code> in the local SWAP installation directory</li>
+</ol>
+</div></blockquote>
+<p>SWAP depends on an external MongoDB database. Make sure you have this installed
+on the system. Find it in your distribution’s repositories, or build it from
+source. Find more information <a class="reference external" href="https://www.mongodb.com/">here</a></p>
+</div>
+<div class="section" id="manual-installation">
+<h3>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h3>
+<p>It is recommended to set up a virtual environment and install SWAP
+and its dependencies inside. Find more information about virtual environments
+<a class="reference external" href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/">here</a>,
+and information about conda <a class="reference external" href="https://conda.io/docs/using/">conda</a>.</p>
+<p>First, clone the repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">miclaraia</span><span class="o">/</span><span class="n">swap</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Create a virtual environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="n">swap</span> <span class="o">--</span><span class="n">python</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span> <span class="n">swap</span>
+</pre></div>
+</div>
+<p>Install SWAP:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">swap</span>
+</pre></div>
+</div>
+<p><em>Development Mode:</em> Pip can also install SWAP in development mode. This means pip will install
+the project in editable mode, so changes to the source affect the runtime version.
+It will also install additional dependencies for testing and development.
+To do this, clone the git repository, navigate to the projectd directory, and run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">hco</span><span class="o">-</span><span class="n">experiments</span><span class="o">/</span><span class="n">swap</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span><span class="n">test</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuring-swap">
+<h2>Configuring SWAP<a class="headerlink" href="#configuring-swap" title="Permalink to this headline">¶</a></h2>
+<p>SWAP has a number of config options that can be specified in the config file.
+A template config file is located in <code class="code docutils literal"><span class="pre">swap/conf/swap.default.conf</span></code>. The
+config file is a python script, and SWAP tries to call the following function in
+the config to override SWAP options:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">override</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="c1"># Override config options</span>
+</pre></div>
+</div>
+<div class="section" id="caesar-integration">
+<h3>Caesar Integration<a class="headerlink" href="#caesar-integration" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuration path</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>config.online_swap.project</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>config.online_swap.project</td>
+<td>p{90} Name of the project used in the caesar config. Make sure
+to configure your webserver to route traffic to
+<code class="code docutils literal"><span class="pre">$HOSTNAME/{project}</span></code></td>
+</tr>
+<tr class="row-even"><td>config.online_swap.workflow</td>
+<td>The workflow id of this project in Panoptes.</td>
+</tr>
+<tr class="row-odd"><td>config.online_swap.host</td>
+<td>Hostname that caesar should use to send classifications to SWAP</td>
+</tr>
+<tr class="row-even"><td>config.online_swap.ext_port</td>
+<td>The external port that the webserver is listening on. We
+recommend leaving this set to 443, and configuring the
+webserver to use SSL. SWAP currently authenticates caesar using
+using plaintext HTTP Basic Auth, so it’s important that the
+traffic is encrypted so the credentials remain private.</td>
+</tr>
+<tr class="row-odd"><td>config.online_swap.port</td>
+<td>Port that SWAP should listen to internally.</td>
+</tr>
+<tr class="row-even"><td>config.online_swap.caesar.caesar_endpoint</td>
+<td>Endpoint that SWAP should use to connect to caesar. Useful to
+test things on staging before using production.
+Known options are <code class="code docutils literal"><span class="pre">caesar-staging</span></code> for staging
+(caesar-staging.zooniverse.org) and <code class="code docutils literal"><span class="pre">caesar</span></code> for
+production (caesar.zooniverse.org)</td>
+</tr>
+<tr class="row-odd"><td>config.online_swap.caesar.panoptes_endpoint</td>
+<td>Endpoint that SWAP should use to connect to Panoptes. Useful to
+test things on staging before using production.
+Known options are <code class="code docutils literal"><span class="pre">panoptes-staging</span></code> for staging
+(panoptes-staging.zooniverse.org) and <code class="code docutils literal"><span class="pre">panoptes</span></code> for
+production (panoptes.zooniverse.org)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parsing-classifications">
+<h3>Parsing Classifications<a class="headerlink" href="#parsing-classifications" title="Permalink to this headline">¶</a></h3>
+<p>Use these configuration options to set how SWAP parses classification. SWAP uses
+these options both to parsing from the panoptes classification dump, and to
+parse incoming classifications from Caesar.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuration path</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>config.parser.annotation.task</td>
+<td>Task identifier. Usually <code class="code docutils literal"><span class="pre">T0</span></code> or <code class="code docutils literal"><span class="pre">T1</span></code>. You can find
+this by looking at the <code class="code docutils literal"><span class="pre">annotation</span></code> column in the
+classification dump csv</td>
+</tr>
+<tr class="row-odd"><td>config.parser.annotation.value_key</td>
+<td>Name of the value field. If this is nested in the task, use a
+<code class="code docutils literal"><span class="pre">.</span></code> to separate the identifier for each level.</td>
+</tr>
+<tr class="row-even"><td>config.parser.annotation.true</td>
+<td>Array of values that have been used in the project to identify
+a <code class="code docutils literal"><span class="pre">true</span></code> classification. This field <em>MUST</em> be a list,
+and the list <em>MUST</em> include a <code class="code docutils literal"><span class="pre">1</span></code> because of how Caesar
+sends the classification data.</td>
+</tr>
+<tr class="row-odd"><td>config.parser.annotation.false</td>
+<td>Array of values that have been used in the project to identify
+a <code class="code docutils literal"><span class="pre">false</span></code> classification. This field <em>MUST</em> be a list,
+and the list <em>MUST</em> include a <code class="code docutils literal"><span class="pre">0</span></code> because of how Caesar
+sends the classification data.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuration path</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>config.logging.files.version</td>
+<td><p class="first"><code class="code docutils literal"><span class="pre">dyanmic</span></code>: Each concurrent SWAP instance writes to its
+own log file. The PID of the calling shell is appended to the
+log filemame.</p>
+<p class="last"><code class="code docutils literal"><span class="pre">static</span></code>: log messages are all sent to the same file</p>
+</td>
+</tr>
+<tr class="row-odd"><td>config.logging.files.static</td>
+<td>Filename to use if <code class="code docutils literal"><span class="pre">config.logging.files.version</span></code> is set
+set to <code class="code docutils literal"><span class="pre">static</span></code></td>
+</tr>
+<tr class="row-even"><td>config.logging.files.max_size_mb</td>
+<td>Maximum file size of a log file in MB. SWAP rotates log files
+when the file reaches this size.</td>
+</tr>
+<tr class="row-odd"><td>config.logging.files.keep_logs</td>
+<td>Number of log files to keep after rotating</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage.html" class="btn btn-neutral float-right" title="UI Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to SWAP’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Laraia, Marco Willi, Darryl Wright, Hugh Dickinson.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
