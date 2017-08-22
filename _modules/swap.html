@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>swap.config &mdash; SWAP 1.0.4-dev1 documentation</title>
+  <title>swap &mdash; SWAP 1.0.4-dev1 documentation</title>
   
 
   
@@ -38,9 +38,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SWAP 1.0.4-dev1 documentation" href="../index.html"/>
-        <link rel="up" title="API Documentation" href="index.html"/>
-        <link rel="next" title="swap.db" href="db.html"/>
-        <link rel="prev" title="swap.agents" href="agents.html"/> 
+        <link rel="up" title="Module code" href="index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,23 +91,12 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">UI Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html#interacting-with-swap">Interacting with SWAP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html#detailed-usage">Detailed Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="agents.html"><code class="docutils literal"><span class="pre">swap.agents</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">swap.config</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#swap-config-config"><code class="docutils literal"><span class="pre">swap.config.config</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="db.html"><code class="docutils literal"><span class="pre">swap.db</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="plots.html"><code class="docutils literal"><span class="pre">swap.plots</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap.html"><code class="docutils literal"><span class="pre">swap</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal"><span class="pre">swap.utils</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
 </ul>
 
             
@@ -154,16 +141,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">API Documentation</a> &raquo;</li>
+          <li><a href="index.html">Module code</a> &raquo;</li>
         
-      <li><code class="docutils literal"><span class="pre">swap.config</span></code></li>
+      <li>swap</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/api/config.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -175,13 +160,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="swap-config">
-<h1><code class="xref py py-mod docutils literal"><span class="pre">swap.config</span></code><a class="headerlink" href="#swap-config" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="swap-config-config">
-<h2><code class="xref py py-mod docutils literal"><span class="pre">swap.config.config</span></code><a class="headerlink" href="#swap-config-config" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+  <h1>Source code for swap</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
 
+<span class="kn">import</span> <span class="nn">swap.config.logger</span> <span class="k">as</span> <span class="nn">logger</span>
+<span class="kn">from</span> <span class="nn">swap.control</span> <span class="k">import</span> <span class="n">Control</span>
+<span class="kn">from</span> <span class="nn">swap.swap</span> <span class="k">import</span> <span class="n">SWAP</span>
+
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">path</span>
+
+<div class="viewcode-block" id="version"><a class="viewcode-back" href="../api/swap.html#swap.version">[docs]</a><span class="k">def</span> <span class="nf">version</span><span class="p">():</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;VERSION&#39;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">version</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">version</span><span class="p">()</span>
+
+<span class="k">assert</span> <span class="n">Control</span>
+<span class="k">assert</span> <span class="n">SWAP</span>
+<span class="k">assert</span> <span class="n">logger</span>
+</pre></div>
 
            </div>
            <div class="articleComments">
@@ -189,15 +190,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="db.html" class="btn btn-neutral float-right" title="swap.db" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="agents.html" class="btn btn-neutral" title="swap.agents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
