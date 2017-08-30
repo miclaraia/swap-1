@@ -34,6 +34,9 @@ class Score:
         self.label = None
 
     def dict(self):
+        """
+        Return this subject's score data as dict
+        """
         return {
             'id': self.id, 'gold': self.gold, 'p': self.p,
             'retired': self.retired, 'ncl': self.ncl}
@@ -43,6 +46,15 @@ class Score:
         return self.retired
 
     def retire(self, p=None):
+        """
+        Mark this subject as retired
+
+        Parameters
+        ----------
+        p : float
+            Retired swap score. Not required if the retired score
+            is the same as the current score.
+        """
         if p is not None:
             self.p = p
         self.retired = True
